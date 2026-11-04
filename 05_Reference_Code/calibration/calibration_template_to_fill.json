@@ -1,0 +1,18 @@
+{
+  "about": "Template for the VOC (PIDX-A-040) FACTORY sheet. When it arrives, fill every null from it and add the record to calibration_records.json with a valid_from LATER than the datasheet record, so it takes over from the datasheet typical values. Do not use any value that is not on the factory sheet. A new site zero for any gas is added the same way, as a new record with source 'site_zero' and the factory-sheet sensitivity (see CAL-H2S-SITE-0001 and CAL-NH3-SITE-0001). Optional temperature fields (H2S only): we_electronic_mv, ae_electronic_mv and gain_mv_per_na from the ISB sheet, and temp_algorithm (AAN 803-05 1-4).",
+  "records": [
+    {
+      "record_id": "CAL-VOC-0002",
+      "station_id": "aqms-monitor",
+      "channel": "VOC",
+      "sensor_model": "PIDX-A-040",
+      "sensor_serial": null,
+      "factory_sheet_ref": null,
+      "valid_from": null,
+      "we_zero_mv": null,
+      "sensitivity": null,
+      "notes": "From the PID factory sheet: zero (mV) goes in we_zero_mv; sensitivity (mV/ppm).",
+      "source": "factory"
+    }
+  ]
+}

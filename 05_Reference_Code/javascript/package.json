@@ -1,0 +1,16 @@
+{
+  "name": "aqms-reference",
+  "version": "1.0.0",
+  "description": "AQMS reference code for the Terra team: Alphasense formulas (site zero, factory sensitivity, temperature correction), 10-minute averages and DM alarm rules.",
+  "main": "aqms_reference.js",
+  "scripts": {
+    "test": "node test/test_reference.js",
+    "sample": "node run_sample.js",
+    "live": "node run_sample.js --live"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}

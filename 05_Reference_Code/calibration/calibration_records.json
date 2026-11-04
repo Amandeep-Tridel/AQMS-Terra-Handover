@@ -1,0 +1,92 @@
+{
+  "about": "Calibration records for the Dubai test station 'aqms-monitor'. Alphasense values only. Sensitivities come from the factory calibration sheets (NH3, H2S). Zeros come from a site zero (source 'site_zero'): the station's own clean-air output, measured as AAN 803-05 'Initial calibration' describes and as Alphasense advised (the cleanest part of the day). VOC uses Alphasense datasheet typical values (source 'datasheet', indicative) until its factory sheet is available. Each new calibration is a NEW record with a later valid_from; old records are never edited. The factory-zero and datasheet records are kept for history. Temperature: no record has the ISB electronic offsets yet (we_electronic_mv, ae_electronic_mv), so only the sensitivity is corrected for temperature; until the station sends sensor temperature, the Open-Meteo hourly temperature at the Tridel Dubai office is passed as sensor_temp_c.",
+  "records": [
+    {
+      "record_id": "CAL-NH3-0001",
+      "station_id": "aqms-monitor",
+      "channel": "NH3",
+      "sensor_model": "NH3-B1+",
+      "sensor_serial": "77840031",
+      "factory_sheet_ref": "Alphasense factory calibration sheet, barcode 77840031",
+      "valid_from": "2026-10-01T00:00:00Z",
+      "we_zero_mv": 328.0,
+      "sensitivity": 58.624,
+      "notes": "From the factory sheet: WE zero 328 mV; sensitivity 73.28 nA/ppm x 0.8 mV/nA (ISB gain) = 58.624 mV/ppm. NH3 (ppm) = (A0 mV - 328) / 58.624. valid_from is the date this record was first used on the test station.",
+      "source": "factory"
+    },
+    {
+      "record_id": "CAL-H2S-DS-0001",
+      "station_id": "aqms-monitor",
+      "channel": "H2S",
+      "sensor_model": "H2S-B4",
+      "sensor_serial": "",
+      "source": "datasheet",
+      "factory_sheet_ref": "Alphasense 4-Electrode ISB manual (Issue 7), Table 2: typical B4 sensor with ISB",
+      "valid_from": "2026-10-01T00:00:00Z",
+      "we_zero_mv": 350.0,
+      "ae_zero_mv": 350.0,
+      "sensitivity": 1.4,
+      "notes": "Datasheet typical, not this sensor's own sheet: WE/AE zero 350/350 mV; 1750 nA/ppm x 0.8 mV/nA = 1400 mV/ppm = 1.4 mV/ppb. Indicative: the H2S-B4 datasheet allows a zero current of -250 to +200 nA (about -143 to +114 ppb)."
+    },
+    {
+      "record_id": "CAL-VOC-DS-0001",
+      "station_id": "aqms-monitor",
+      "channel": "VOC",
+      "sensor_model": "PIDX-A-040",
+      "sensor_serial": "",
+      "source": "datasheet",
+      "factory_sheet_ref": "Alphasense PIDX-A-040 datasheet (Doc. Ref. PIDX-A-040/OCT25)",
+      "valid_from": "2026-10-01T00:00:00Z",
+      "we_zero_mv": 70.0,
+      "sensitivity": 55.0,
+      "fault_below_mv": 40.0,
+      "notes": "Datasheet typical, not this sensor's own sheet: offset voltage 40-100 mV (midpoint 70 mV used); typical sensitivity 55 mV/ppm +/-10%; output signal from 0.040 V, so below 40 mV is a sensor fault. Indicative: about +/-0.55 ppm from the offset range."
+    },
+    {
+      "record_id": "CAL-H2S-0002",
+      "station_id": "aqms-monitor",
+      "channel": "H2S",
+      "sensor_model": "H2S-B4",
+      "sensor_serial": "",
+      "source": "factory",
+      "factory_sheet_ref": "Alphasense H2S-B4 factory calibration sheet",
+      "valid_from": "2026-10-02T00:00:00Z",
+      "we_zero_mv": 395.0,
+      "ae_zero_mv": 362.0,
+      "sensitivity": 1.727952,
+      "notes": "From the factory sheet: WE (OP1, A1) zero 395 mV; AE (OP2, A2) zero 362 mV; sensitivity 1.727952 mV/ppb = 1727.952 mV/ppm. H2S (ppm) = ((OP1 mV - 395) - (OP2 mV - 362)) / 1727.952. Worked example on the sheet: OP1 0.600 V, OP2 0.300 V -> 267 / 1727.952 = 0.1545 ppm. Supersedes CAL-H2S-DS-0001 (datasheet typical)."
+    },
+    {
+      "record_id": "CAL-NH3-SITE-0001",
+      "station_id": "aqms-monitor",
+      "channel": "NH3",
+      "sensor_model": "NH3-B1+",
+      "sensor_serial": "77840031",
+      "source": "site_zero",
+      "factory_sheet_ref": "Alphasense factory calibration sheet, barcode 77840031 (sensitivity)",
+      "valid_from": "2026-10-28T00:00:00Z",
+      "we_zero_mv": 420.0,
+      "sensitivity": 58.624,
+      "we_electronic_mv": null,
+      "temp_algorithm": null,
+      "notes": "Site zero: median output in the cleanest hours, 02:00-05:00 Dubai time, on 29 and 31 Oct and 1, 2 and 3 Nov 2026 (899 readings, channels stuck at the ADC rail left out), as Alphasense advised for ambient monitoring. Applies from the station's first reading. WE zero 420 mV (factory sheet: 328 mV); sensitivity 58.624 mV/ppm from the factory sheet, unchanged. NH3 (ppm) = (A0 mV - 420) / 58.624. Supersedes CAL-NH3-0001's zero only."
+    },
+    {
+      "record_id": "CAL-H2S-SITE-0001",
+      "station_id": "aqms-monitor",
+      "channel": "H2S",
+      "sensor_model": "H2S-B4",
+      "sensor_serial": "",
+      "source": "site_zero",
+      "factory_sheet_ref": "Alphasense H2S-B4 factory calibration sheet (sensitivity)",
+      "valid_from": "2026-10-28T00:00:00Z",
+      "we_zero_mv": 458.0,
+      "ae_zero_mv": 359.0,
+      "sensitivity": 1.727952,
+      "we_electronic_mv": null,
+      "ae_electronic_mv": null,
+      "temp_algorithm": null,
+      "notes": "Site zero: median output in the cleanest hours, 02:00-05:00 Dubai time, on 29 and 31 Oct and 1, 2 and 3 Nov 2026 (899 readings, channels stuck at the ADC rail left out), as Alphasense advised for ambient monitoring. Applies from the station's first reading. WE (A1) zero 458 mV, AE (A2) zero 359 mV (factory sheet: 395 / 362 mV); sensitivity 1.727952 mV/ppb from the factory sheet, unchanged. H2S (ppb) = ((A1 - 458) - (A2 - 359)) / 1.727952. To switch on temperature correction later: fill we_electronic_mv and ae_electronic_mv from the ISB sheet ('Electronic Zero WE / AUX'), set temp_algorithm (AAN 803-05 Table 2 suggests 1 for B-type H2S), and send the sensor temperature. Supersedes CAL-H2S-0002's zeros only."
+    }
+  ]
+}

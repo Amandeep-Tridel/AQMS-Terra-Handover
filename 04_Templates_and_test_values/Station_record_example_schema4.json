@@ -1,0 +1,42 @@
+{
+  "a0Volts": 0.36734,
+  "adcOk": true,
+  "averageCount": 1,
+  "batteryV": 11.7587,
+  "combinedString": "2026-11-03,09:59:10,0.36734,2.55422,2.55391,0.09812,NA",
+  "destination": "client",
+  "device": "aqms-monitor",
+  "h2sDiffV": 0.00031,
+  "ntpUtc": "2026-11-03T09:59:11Z",
+  "raw": [
+    4702,
+    32694,
+    32690,
+    1256
+  ],
+  "rtcUtc": "2026-11-03T09:59:10Z",
+  "sampleAgeMs": 3419,
+  "schemaVersion": 4,
+  "stm32": {
+    "available": false,
+    "echoIgnored": 0,
+    "fresh": false,
+    "messageCount": 0,
+    "rejectedCount": 0,
+    "reset": {
+      "ackCount": 0,
+      "ackKind": "none",
+      "cooldownRemainingMs": 0,
+      "remainingMs": 0,
+      "state": "idle",
+      "timeoutSeconds": 30
+    }
+  },
+  "timestampUtc": "2026-11-03T09:59:10Z",
+  "volts": [
+    0.36734,
+    2.55422,
+    2.55391,
+    0.09812
+  ]
+}
